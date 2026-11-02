@@ -1,4 +1,6 @@
 import React from "react";
+import { getPayload } from "payload";
+import config from "@payload-config";
 import "@/css/index.css";
 import Head from "next/head";
 import { 
@@ -43,6 +45,11 @@ export const metadata = {
 
 export default async function RootLayout(props: { children: React.ReactNode }) {
   const { children } = props; 
+  const payload = await getPayload({ config });
+  const [header, footer] = await Promise.all([
+    payload.findGlobal({ slug: "header" }),
+    payload.findGlobal({ slug: "footer" }),
+  ]);
 
   return (
     <html lang="no">
@@ -50,9 +57,9 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght,MONO@0,300..800,1;1,300..800,1&family=Literata:ital,opsz,wght@0,7..72,200..900;1,7..72,200..900&family=Playwrite+TZ:wght@100..400&family=Strichpunkt+Sans:wght@400..900&display=swap" crossOrigin="anonymous" />
       </Head>
       <body>
-        <Header />
+        <Header header={header} />
         <main>{children}</main>
-        <Footer/>
+        <Footer footer={footer} />
       </body>
     </html>
   );
