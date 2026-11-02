@@ -2,6 +2,7 @@ import BookCard from "./components/BookCard/BookCard";
 import BookShelf from "./components/BookShelf/BookShelf";
 import EmployeeCard from "./components/EmployeeCard/EmployeeCart";
 import EventCard from "./components/EventCard/EventCard";
+import BookPickSec from "./components/BookPickSec/BookPickSec";
 
 export default async function IndexPage() {
   return (
@@ -239,7 +240,8 @@ export default async function IndexPage() {
               </div>
             </div>
           </article>
-        </section>
+      </section>
+      <BookPickSec/>
 
 
 
