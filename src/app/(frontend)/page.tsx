@@ -1,3 +1,8 @@
+import BookCard from "./components/BookCard/BookCard";
+import BookShelf from "./components/BookShelf/BookShelf";
+import EmployeeCard from "./components/EmployeeCard/EmployeeCart";
+import EventCard from "./components/EventCard/EventCard";
+
 export default async function IndexPage() {
   return (
     <>
@@ -42,7 +47,8 @@ export default async function IndexPage() {
               </div>
               
               <a className="button block-button" href="#">Kjøp (399,-)</a>
-            </article>
+          </article>
+          <BookCard/>
             <article className="box box-light-gray book-card">
               <img className="book-card-cover" src="https://www.norli.no/cdn/1787116804/Produktbilder/SDB/Book/SD%20Books/9781037200083.jpg?auto=webp&format=pjpg&width=480&height=600&fit=cover" alt="" width="160" height="200" />
 
@@ -307,8 +313,9 @@ export default async function IndexPage() {
               <a className="button block-button" href="#">Kjøp (229,-)</a>
             </article>
           </div>
-        </section>
-
+      </section>
+        
+      <BookShelf/>
 
         <section className="m-b-xl stack stack-large">
           <h2 className="section-heading">Lagertømming!</h2>
@@ -390,7 +397,8 @@ export default async function IndexPage() {
                 <p>
                   Hei! Jeg er daglig leder og eier av BookDragons. Jeg har lest bøker helt siden jeg var liten og greide å oppfylle drømmen om å starte en bokhandel her i Lillestrøm. Jeg elsker science fiction, fantasy og humor.
                 </p>
-              </div>
+            </div>
+            <EmployeeCard/>
 
               <div className="stack employee-card">
                 <img className="employee-card-photo" src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=1361&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D" alt="" height="805" width="640" />
@@ -426,7 +434,10 @@ export default async function IndexPage() {
             </article>
             <aside className="stack">
               <h2 className="section-subheading">Kommende arrangementer</h2>
-              <ul className="future-events-list">
+            <ul className="future-events-list">
+              <li>
+                <EventCard/>
+              </li>
                 <li>
                   <div className="calendar-icon" aria-label="29. november">
                     <span className="calendar-icon-month">Nov</span>
