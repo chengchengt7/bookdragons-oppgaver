@@ -18,8 +18,6 @@ import { HeroBlock } from './blocks/HeroBlock';
 import { Homepage } from './globals/HomePage';
 import { BooksBlock } from './blocks/BooksBlock';
 import { BookPicksBlock } from './blocks/BookPicksBlock';
-import { BookTokBlock } from './blocks/BookTokBlock';
-import { SalesBlock } from './blocks/SalesBlock';
 import { EmployeeBlock } from './blocks/EmployeeBlock';
 import { EventBlock } from './blocks/EventBlock';
 
@@ -50,8 +48,6 @@ const blocks: Block[] = [
   HeroBlock,
   BooksBlock,
   BookPicksBlock,
-  BookTokBlock,
-  SalesBlock,
   EmployeeBlock,
   EventBlock
 ];

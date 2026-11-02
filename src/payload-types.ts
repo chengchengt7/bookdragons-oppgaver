@@ -69,8 +69,6 @@ export interface Config {
     'hero-block': HeroBlockType;
     'books-block': BooksBlockType;
     'book-picks-block': BookPicksBlockType;
-    'book-tok-block': BookTokBlockType;
-    'sales-block': SalesBlockType;
     'employee-block': EmployeeBlockType;
     'event-block': EventBlockType;
   };
@@ -244,28 +242,6 @@ export interface BookPicksBlockType {
   id?: string | null;
   blockName?: string | null;
   blockType: 'book-picks-block';
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "BookTokBlockType".
- */
-export interface BookTokBlockType {
-  title: string;
-  books: (number | Book)[];
-  id?: string | null;
-  blockName?: string | null;
-  blockType: 'book-tok-block';
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "SalesBlockType".
- */
-export interface SalesBlockType {
-  title: string;
-  books: (number | Book)[];
-  id?: string | null;
-  blockName?: string | null;
-  blockType: 'sales-block';
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -647,17 +623,7 @@ export interface Footer {
  */
 export interface Homepage {
   id: number;
-  layout?:
-    | (
-        | HeroBlockType
-        | BooksBlockType
-        | BookPicksBlockType
-        | BookTokBlockType
-        | SalesBlockType
-        | EmployeeBlockType
-        | EventBlockType
-      )[]
-    | null;
+  layout?: (HeroBlockType | BooksBlockType | BookPicksBlockType | EmployeeBlockType | EventBlockType)[] | null;
   updatedAt?: string | null;
   createdAt?: string | null;
 }
@@ -700,8 +666,6 @@ export interface HomepageSelect<T extends boolean = true> {
         'hero-block'?: T | HeroBlockTypeSelect<T>;
         'books-block'?: T | BooksBlockTypeSelect<T>;
         'book-picks-block'?: T | BookPicksBlockTypeSelect<T>;
-        'book-tok-block'?: T | BookTokBlockTypeSelect<T>;
-        'sales-block'?: T | SalesBlockTypeSelect<T>;
         'employee-block'?: T | EmployeeBlockTypeSelect<T>;
         'event-block'?: T | EventBlockTypeSelect<T>;
       };
@@ -747,26 +711,6 @@ export interface BookPicksBlockTypeSelect<T extends boolean = true> {
         book?: T;
         id?: T;
       };
-  id?: T;
-  blockName?: T;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "BookTokBlockType_select".
- */
-export interface BookTokBlockTypeSelect<T extends boolean = true> {
-  title?: T;
-  books?: T;
-  id?: T;
-  blockName?: T;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "SalesBlockType_select".
- */
-export interface SalesBlockTypeSelect<T extends boolean = true> {
-  title?: T;
-  books?: T;
   id?: T;
   blockName?: T;
 }

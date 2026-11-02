@@ -9,7 +9,6 @@ export const BooksBlock: Block = {
       type: "text",
       label: "Title",
       required: true,
-      unique: true,
     },
     {
       name: "books",
